@@ -16,7 +16,7 @@
 <body>
 
         <?php
-                include('index.php');
+                include('db_connection.php');
         ?>
 
     <div style="background-color: #1d232a; margin-bottom: 25px; height: 50px; display: flex; justify-content: space-between;">

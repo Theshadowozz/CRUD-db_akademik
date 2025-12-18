@@ -25,7 +25,7 @@
     </div>
     
     <?php
-    include('index.php');
+    include('db_connection.php');
 
     $edit = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE id = $_GET[id]");
     $data = mysqli_fetch_array($edit);

@@ -111,7 +111,7 @@
                 </thead>
 
                 <?php
-                include('index.php');
+                include('./Mahasiswa/db_connection.php');
 
                 $tampil = mysqli_query($koneksi, 'SELECT mahasiswa.*, prodi.nama_prodi FROM mahasiswa JOIN prodi ON mahasiswa.id_prodi = prodi.id');
                 $no = 1;
@@ -147,7 +147,7 @@
 
         <div style="display: flex; justify-content: center; border: 2px solid grey; width: 460px; margin: 12px auto ; background-color: #1d232a; border-radius: 6px;">
             <p style="color: white;">Klik <button style="margin: auto; background-color: #00d3bb; width: 60px; height: 30px; border-radius: 8px; margin-left: 6px; margin-right: 6px;">
-                    <a href="create.php" style="text-decoration:none; color: #084d49;">Disini</a>
+                    <a href="/Mahasiswa/.create.php" style="text-decoration:none; color: #084d49;">Disini</a>
                 </button> untuk proses input buku tamu</p>
         </div>
     </div>

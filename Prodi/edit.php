@@ -25,7 +25,7 @@
     </div>
 
     <?php
-    include('../Mahasiswa/index.php');
+    include('../Mahasiswa/db_connection.php');
 
     $edit = mysqli_query($koneksi, "SELECT * FROM prodi WHERE id = $_GET[id]");
     $data = mysqli_fetch_array($edit);

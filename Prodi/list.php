@@ -110,7 +110,7 @@
                 </thead>
 
                 <?php
-                include('../Mahasiswa/index.php');
+                include('../Mahasiswa/db_connection.php');
 
                 $tampil = mysqli_query($koneksi, 'SELECT * FROM prodi');
                 $no = 1;

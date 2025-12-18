@@ -58,7 +58,7 @@
 
     <?php
 
-    include('../Mahasiswa/index.php');
+    include('../Mahasiswa/db_connection.php');
 
     if (isset($_POST['Submit'])) {
         $nama_prodi = $_POST['nama_prodi'];
