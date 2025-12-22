@@ -176,7 +176,7 @@
 
             document.getElementById('deletePopup').style.display = 'flex';
 
-            deleteUrl = `hapus.php?id=${id}`;
+            deleteUrl = `./Mahasiswa/hapus.php?id=${id}`;
         }
 
         function hideDeletePopup() {

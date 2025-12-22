@@ -91,7 +91,7 @@
 
         if ($sql) {
             echo "Terimakasih telah mengisi data mahasiswa <br>";
-            echo "<a href=list.php>Tampilkan list data mahasiswa</a>";
+            echo "<a href=../index.php>Tampilkan list data mahasiswa</a>";
         } else {
             echo "Proses input data mahasiswa";
         }
