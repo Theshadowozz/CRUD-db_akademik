@@ -128,7 +128,7 @@
                             <td>
                                 <div style="display: flex; justify-content: space-between; gap: 10px;">
                                     <button style="background-color: #00d3bb; padding: 5px 15px; border-radius: 6px; border: none;">
-                                        <a href="edit.php?id=<?php echo $data['id'] ?>" style="text-decoration: none; color:#1d232a;">Edit</a>
+                                        <a href="./Mahasiswa/edit.php?id=<?php echo $data['id'] ?>" style="text-decoration: none; color:#1d232a;">Edit</a>
                                     </button>
                                     <button class="btn-delete"
                                         onclick="showDeletePopup(<?php echo $data['id']; ?>, '<?php echo addslashes($data['nama_mhs']); ?>')">
