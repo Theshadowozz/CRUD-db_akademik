@@ -1,12 +1,3 @@
-<?php
-    
-    
-    if(isset($_COOKIE["user"])){
-        header("Location: login.php");
-        exit;
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Mahasiswa</title>
     <style>
-        *{
+        * {
             margin: 0px;
             padding: 0px;
         }
+
         .popup-overlay {
             display: none;
             position: fixed;
@@ -92,14 +84,22 @@
 
 <body>
 
-   <div style="background-color: #1d232a; margin-bottom: 25px; height: 50px; display: flex; justify-content: space-between;">
+    <?php
+    if (!isset($_COOKIE["user"])) {
+        header("Location: login.php");
+        exit;
+    }
+    ?>
+
+    <div style="background-color: #1d232a; margin-bottom: 25px; height: 50px; display: flex; justify-content: space-between;">
         <div style="color: white; font-size: 25px; margin: auto 0px auto 12px;">Mahasiswa</div>
         <div style="display: flex; gap: 6px; margin: auto 12px auto 0px;">
             <a href="../Home" style="text-decoration: none; color: #e4e4e4;">Home</a>
             <a href="/Mahasiswa/create.php" style="text-decoration: none; color: #e4e4e4;">Mahasiswa</a>
             <a href="../Prodi/create.php" style="text-decoration: none; color: #e4e4e4;">Prodi</a>
+            <a href="./edit_profile.php" style="text-decoration: none; color: #e4e4e4;">Edit Profile</a>
         </div>
-        
+
     </div>
     <div style="display: flex; flex-direction: column; justify-content: center;">
 

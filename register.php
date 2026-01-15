@@ -5,7 +5,7 @@
         $username = $_POST["username"];
         $password = password_hash($_POST["password"], PASSWORD_DEFAULT); 
         $password2 = password_hash($_POST["password2"], PASSWORD_DEFAULT); 
-        $no_telpon = $_POST["nomor"];
+        $email = $_POST["email"];
         
         $password_raw = $_POST["password"];
         $password_raw2 = $_POST["password2"];
@@ -27,13 +27,15 @@
             return false;
         }
         
-        $query = mysqli_query($koneksi, "INSERT INTO user (username,password,no_telpon) 
-            VALUES ('$username', '$password', '$no_telpon')"); 
+        $query = mysqli_query($koneksi, "INSERT INTO user (username,password,email) 
+            VALUES ('$username', '$password', '$email')"); 
         
         if($query ){
             echo "<script>
                     alert('user baru berhasil ditambahkan!');
                 </script>";
+                header("Location: login.php");
+                exit;
         } else {
             echo mysqli_error($koneksi);
         }
@@ -68,8 +70,8 @@
                     <label for="password2" style="color: white;">Konfirmasi Password</label>
                     <input type="password" name="password2" id="password2" placeholder="Konfirmasi Password Anda" style="height: 32px; margin-bottom: 12px; max-width: 95%; border-radius: 6px;">
                     
-                    <label for="nomor" style="color: white;">No.HP</label>
-                    <input type="text" name="nomor" id="nomor" placeholder="Masukkan Nomor HP Anda" style="height: 32px; margin-bottom: 12px; max-width: 95%; border-radius: 6px;">
+                    <label for="email" style="color: white;">Email</label>
+                    <input type="text" name="email" id="email" placeholder="Masukkan Email Anda" style="height: 32px; margin-bottom: 12px; max-width: 95%; border-radius: 6px;">
                     
                     <button type="submit" name="register" style="max-width: 50%; margin-left: 25%; margin-bottom: 5%; border-radius: 6px; height: 40px; background-color: #9fe88d;" >Register</button>
                 </div>
