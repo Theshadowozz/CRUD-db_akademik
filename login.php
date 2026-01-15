@@ -2,10 +2,10 @@
 include('./Mahasiswa/db_connection.php');
 
 if (isset($_POST["login"])) {
-    $username = $_POST["username"];
+    $email = $_POST["email"];
     $password = $_POST["password"];
 
-    $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username'");
+    $result = mysqli_query($koneksi, "SELECT * FROM user WHERE email = '$email'");
 
     if (mysqli_num_rows($result) === 1) {
 
@@ -37,8 +37,8 @@ if (isset($_POST["login"])) {
                 <h2 style="text-align: center; color:white;">Login</h2>
 
                 <div style="display: flex; flex-direction: column; gap: 12px; margin-left: 12px;">
-                    <label for="username" style="color: white;">Nama Anda</label>
-                    <input type="text" name="username" id="username" placeholder="Masukkan Nama Anda" style="height: 32px; margin-bottom: 12px; max-width: 95%; border-radius: 6px;">
+                    <label for="email" style="color: white;">Email Anda</label>
+                    <input type="email" name="email" id="email" placeholder="Masukkan Email Anda" style="height: 32px; margin-bottom: 12px; max-width: 95%; border-radius: 6px;">
 
                     <label for="password" style="color: white;">Password</label>
                     <input type="password" name="password" id="password" placeholder="Masukkan Password Anda" style="height: 32px; margin-bottom: 12px; max-width: 95%; border-radius: 6px;">
@@ -47,7 +47,7 @@ if (isset($_POST["login"])) {
 
                     <p style="color: white;">Don't have an account? <a href="register.php" style="text-decoration: none; color: #00d0ef;">Sign Up</a></p>
                     <?php if (isset($error)) : ?>
-                        <p style="color: red; font-style: italic;">Username / Password salah</p>
+                        <p style="color: red; font-style: italic;">email / Password salah</p>
                     <?php endif; ?>
                 </div>
             </form>

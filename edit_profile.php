@@ -42,7 +42,9 @@
 
     if (isset($_POST['edit'])) {
 
-        $update = mysqli_query($koneksi, "UPDATE user SET username = '$_POST[username] ', password = '$_POST[password]', email = '$_POST[email]' WHERE id = $_COOKIE[user]");
+        $password = password_hash($_POST["password"], PASSWORD_DEFAULT); 
+    
+        $update = mysqli_query($koneksi, "UPDATE user SET username = '$_POST[username] ', password = '$password' WHERE id = $_COOKIE[user]");
 
         if ($update) {
             echo "Terimakasih telah mengedit data user <br>";

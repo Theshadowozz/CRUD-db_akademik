@@ -18,11 +18,11 @@
             return false;
         }
         
-         $result = mysqli_query($koneksi, "SELECT username FROM user WHERE username = '$username' ");
+         $result = mysqli_query($koneksi, "SELECT email FROM user WHERE email = '$email' ");
         
         if( mysqli_fetch_array($result) ){
             echo"<script>
-                    alert('username sudah terdaftar!');
+                    alert('email sudah terdaftar!');
                 </script>";
             return false;
         }
@@ -64,14 +64,14 @@
                     <label for="username" style="color: white;">Nama Anda</label>
                     <input type="text" name="username" id="username" placeholder="Masukkan Nama Anda" style="height: 32px; margin-bottom: 12px; max-width: 95%; border-radius: 6px;">
                     
+                    <label for="email" style="color: white;">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Masukkan Email Anda" style="height: 32px; margin-bottom: 12px; max-width: 95%; border-radius: 6px;">
+                    
                     <label for="password" style="color: white;">Password</label>
                     <input type="password" name="password" id="password" placeholder="Masukkan Password Anda" style="height: 32px; margin-bottom: 12px; max-width: 95%; border-radius: 6px;">
                     
                     <label for="password2" style="color: white;">Konfirmasi Password</label>
                     <input type="password" name="password2" id="password2" placeholder="Konfirmasi Password Anda" style="height: 32px; margin-bottom: 12px; max-width: 95%; border-radius: 6px;">
-                    
-                    <label for="email" style="color: white;">Email</label>
-                    <input type="text" name="email" id="email" placeholder="Masukkan Email Anda" style="height: 32px; margin-bottom: 12px; max-width: 95%; border-radius: 6px;">
                     
                     <button type="submit" name="register" style="max-width: 50%; margin-left: 25%; margin-bottom: 5%; border-radius: 6px; height: 40px; background-color: #9fe88d;" >Register</button>
                 </div>
